@@ -15,7 +15,15 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             Toast.makeText(this, "Dice Rolled!",Toast.LENGTH_SHORT).show()
 
-            findViewById<TextView>(R.id.textView).text = (1..6).random().toString()
+            val dado = Dice(6)
+            findViewById<TextView>(R.id.textView).text = dado.roll().toString()
         }
+    }
+}
+
+class Dice(private val numSides: Int) {
+
+    fun roll(): Int {
+        return (1..numSides).random()
     }
 }

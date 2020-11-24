@@ -13,11 +13,21 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled!",Toast.LENGTH_SHORT).show()
+            // MY SOLUCION
+            // Toast.makeText(this, "Dice Rolled!",Toast.LENGTH_SHORT).show()
+            // val dado = Dice(6)
+            // findViewById<TextView>(R.id.textView).text = dado.roll().toString()
 
-            val dado = Dice(6)
-            findViewById<TextView>(R.id.textView).text = dado.roll().toString()
+            // LA SOLUCION DE CODELABS
+            rollDice()
         }
+    }
+
+    private fun rollDice() {
+        val dice = Dice(6)
+        val diceRoll = dice.roll()
+        val resultTextView: TextView = findViewById(R.id.textView)
+        resultTextView.text = diceRoll.toString()
     }
 }
 

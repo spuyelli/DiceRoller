@@ -18,16 +18,18 @@ class MainActivity : AppCompatActivity() {
             // findViewById<TextView>(R.id.textView).text = dado.roll().toString()
 
             // LA SOLUCION DE CODELABS
-            rollDice()
+            rollDice(R.id.imageView1)
+            rollDice(R.id.imageView2)
         }
 
-        rollDice()
+        rollDice(R.id.imageView1)
+        rollDice(R.id.imageView2)
     }
 
-    private fun rollDice() {
+    private fun rollDice(ImageViewID: Int) {
         val dice = Dice(6)
         val diceRoll = dice.roll()
-        val diceImage: ImageView = findViewById(R.id.imageView)
+        val diceImage: ImageView = findViewById(ImageViewID)
         val drawableResource = when(diceRoll){
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
